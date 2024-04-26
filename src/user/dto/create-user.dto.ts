@@ -1,6 +1,8 @@
 import { IsEmail, IsString } from 'class-validator';
+import { Unique } from 'typeorm';
 
-export class UpdateUserDto {
+@Unique(['email'])
+export class CreateUserDto {
     @IsString()
     name: string;
 
